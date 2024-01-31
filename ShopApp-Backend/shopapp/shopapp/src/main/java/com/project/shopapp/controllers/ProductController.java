@@ -28,7 +28,6 @@ public class ProductController {
     //POST http://localhost:8088/v1/api/products
     public ResponseEntity<?> createProduct(
             @Valid @ModelAttribute ProductDTO productDTO,
-            @RequestPart("file") MultipartFile file,
             BindingResult result
     ) {
         try {
@@ -39,8 +38,12 @@ public class ProductController {
                         .toList();
                 return ResponseEntity.badRequest().body(errorMessages);
             }
-
-            if (file != null) {
+            List<MultipartFile> files = productDTO.getFiles();
+            files = files == null ? new ArrayList<MultipartFile>() : files;
+            for (MultipartFile file : files) {
+                if(file.getSize() == 0) {
+                    continue;
+                }
                 // Kiểm tra kích thước file và định dạng
                 if(file.getSize() > 10 * 1024 * 1024) { // Kích thước > 10MB
                     return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
@@ -96,10 +99,3 @@ public class ProductController {
         return ResponseEntity.ok(String.format("Product with id = %d deleted successfully", id));
     }
 }
-//{
-//        "name": "macbook air ",
-//        "price": 812.34,
-//        "thumbnail": "",
-//        "description": "This is a test product",
-//        "category_id": 1
-//        }
