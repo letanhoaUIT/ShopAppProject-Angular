@@ -1,7 +1,10 @@
 package com.project.shopapp.models;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "roles")
@@ -9,7 +12,6 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +19,7 @@ public class Role {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    public static String ADMIN = "ADMIN";
+    public static String USER = "USER";
 }
