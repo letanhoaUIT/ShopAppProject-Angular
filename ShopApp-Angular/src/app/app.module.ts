@@ -25,12 +25,12 @@ import { RegisterComponent } from './register/register.component'
   ],
   providers: [],
   bootstrap: [
-    //HomeComponent
+    HomeComponent
     // DetailProductComponent
     //  OrderComponent
     // OrderConfirmComponent
     // LoginComponent
-    RegisterComponent
+    // RegisterComponent
   ]
 })
 export class AppModule { }
