@@ -31,8 +31,8 @@ import { FormsModule } from '@angular/forms';
     // DetailProductComponent
     //  OrderComponent
     // OrderConfirmComponent
-    // LoginComponent
-    RegisterComponent
+    LoginComponent
+    // RegisterComponent
   ]
 })
 export class AppModule { }
