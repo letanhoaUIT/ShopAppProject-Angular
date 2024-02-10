@@ -4,7 +4,7 @@
 .confirmation-container {
     margin: 50px auto;
     padding: 20px;
-    max-width: 600px;
+    max-width: 600px;            
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
@@ -24,15 +24,14 @@
     color: white;
     margin-right: 10px;
 }
-
 table {
     width: 100%;
     border-radius: 10px;
     border: none;
     border-collapse: separate;
     border: 1px solid white;
-    border-spacing: 0;
-    background-color: rgb(12, 13, 54);
+    border-spacing: 0;    
+    background-color: rgb(12, 13, 54);    
 }
 
 th,
@@ -40,7 +39,6 @@ td {
     padding: 10px;
     text-align: center;
 }
-
 .btn-gradient {
     background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
     color: white;

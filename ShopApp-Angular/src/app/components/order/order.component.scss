@@ -19,23 +19,23 @@
     border-color: white;
     background-color: rgb(19, 23, 42);
 }
-
 .form-label {
     color: white;
 }
-
+.product-header {
+    color: rgb(233, 66, 176);
+}
 .product-order {
     color: rgb(105, 244, 181);
 }
-
 table {
-    width: 100%; //chiem 100% phan tu cha
+    width: 100%;
     border-radius: 10px;
     border: none;
     border-collapse: separate;
     border: 1px solid white;
     border-spacing: 0;
-    background-color: rgb(12, 13, 54);
+    background-color: rgb(12, 13, 54);    
 }
 
 th,
@@ -43,7 +43,6 @@ td {
     padding: 10px;
     text-align: center;
 }
-
 .product-info {
     display: flex;
     align-items: center;
@@ -60,10 +59,9 @@ td {
     color: white;
     margin-right: 10px;
 }
-
 .btn-gradient {
     background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
     color: white;
     border-radius: 30px;
     width: 200px;
-}
+  }
