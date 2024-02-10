@@ -157,7 +157,9 @@ public class ProductController {
         // Tạo Pageable từ thông tin trang và giới hạn
         PageRequest pageRequest = PageRequest.of(
                 page, limit,
-                Sort.by("createdAt").descending());
+//                Sort.by("createdAt").descending());
+                Sort.by("id").ascending()
+        );
         Page<ProductResponse> productPage = productService.getAllProducts(pageRequest);
         // Lấy tổng số trang
         int totalPages = productPage.getTotalPages();

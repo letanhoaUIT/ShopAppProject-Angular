@@ -11,6 +11,7 @@ import com.project.shopapp.repositories.CategoryRepository;
 import com.project.shopapp.repositories.ProductImageRepository;
 import com.project.shopapp.repositories.ProductRepository;
 import com.project.shopapp.responses.ProductResponse;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -58,6 +59,7 @@ public class ProductService implements IProductService{
     }
 
     @Override
+    @Transactional
     public Product updateProduct(
             long id,
             ProductDTO productDTO
