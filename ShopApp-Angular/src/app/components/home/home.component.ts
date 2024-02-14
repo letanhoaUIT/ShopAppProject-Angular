@@ -5,6 +5,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/app/environments/environment';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,    
-    private router: Router
+    private router: Router,
+    private tokenService: TokenService
     ) {}
 
   ngOnInit() {
@@ -96,6 +98,6 @@ export class HomeComponent implements OnInit {
   onProductClick(productId: number) {
     debugger
     // Điều hướng đến trang detail-product với productId là tham số
-    this.router.navigate(['/detail-product', productId]);
-  }
+    this.router.navigate(['/products', productId]);
+  }  
 }
