@@ -37,12 +37,15 @@ export class LoginComponent {
   ngOnInit() {
     // Gọi API lấy danh sách roles và lưu vào biến roles
     debugger
-    this.roleService.getRoles().subscribe({
+    this.roleService.getRoles().subscribe({      
       next: (roles: Role[]) => { // Sử dụng kiểu Role[]
         debugger
         this.roles = roles;
         this.selectedRole = roles.length > 0 ? roles[0] : undefined;
       },
+      complete: () => {
+        debugger
+      },  
       error: (error: any) => {
         debugger
         console.error('Error getting roles:', error);
