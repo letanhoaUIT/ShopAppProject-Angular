@@ -62,7 +62,7 @@ td {
     margin-right: 10px;
 }
 .btn-gradient {
-    background: linear-gradient(to right, rgb(225, 64, 180), $shopapp-color);
+    background: linear-gradient(to right, $shopapp-tint-color, $shopapp-color);
     color: white;
     border-radius: 30px;
     width: 200px;

@@ -10,14 +10,17 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {TokenInterceptor} from './interceptors/token.interceptor';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app/app.component';
+import { UserProfileComponent } from './components/user-profile/user.profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { 
   HttpClientModule, 
   HTTP_INTERCEPTORS 
 } from '@angular/common/http';
-import {TokenInterceptor} from './interceptors/token.interceptor';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app/app.component';
+
 
 @NgModule({
   declarations: [    
@@ -29,6 +32,7 @@ import { AppComponent } from './app/app.component';
     OrderDetailComponent, 
     LoginComponent, 
     RegisterComponent, 
+    UserProfileComponent,
     AppComponent
   ],
   imports: [
@@ -37,6 +41,7 @@ import { AppComponent } from './app/app.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [
     {
