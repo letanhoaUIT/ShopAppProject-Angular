@@ -1,3 +1,5 @@
+@import '../../styles/shared-styles.scss';
+
 header {
     background-color: rgba(0, 0, 0, 0);
     color: rgb(173, 178, 203);
@@ -22,7 +24,7 @@ header {
 }
 
 .navbar .container .navbar-nav .nav-link.active {
-    background-color: rgb(127, 68, 255) !important;
+    background-color: $shopapp-color !important;
     color: white !important;
 }
 
@@ -43,6 +45,5 @@ header {
 
 .popover-item:hover {
     background-color: #f0f0f0;
-    color: red;
-    /* Change text color to red on hover */
+    color: $shopapp-color;    
 }

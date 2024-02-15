@@ -10,7 +10,7 @@ import {
 import { OrderComponent } from './components/order/order.component';
 import { 
   OrderDetailComponent 
-} from './components/order-confirm/order.detail.component';
+} from './components/detail-order/order.detail.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
