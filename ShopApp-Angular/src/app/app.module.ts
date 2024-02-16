@@ -15,6 +15,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { UserProfileComponent } from './components/user-profile/user.profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { AdminComponent } from './components/admin/admin.component';
+import { OrderAdminComponent } from './components/admin/order/order.admin.component';
+import { ProductAdminComponent } from './components/admin/product/product.admin.component';
+import { CategoryAdminComponent } from './components/admin/category/category.admin.component';
 
 import { 
   HttpClientModule, 
@@ -33,15 +38,21 @@ import {
     LoginComponent, 
     RegisterComponent, 
     UserProfileComponent,
-    AppComponent
+    AppComponent,
+    //admin    
+    AdminComponent,
+    OrderAdminComponent,
+    ProductAdminComponent,
+    CategoryAdminComponent,
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    NgbModule,
+    HttpClientModule,    
+    AppRoutingModule,    
+    NgbModule,        
   ],
   providers: [
     {

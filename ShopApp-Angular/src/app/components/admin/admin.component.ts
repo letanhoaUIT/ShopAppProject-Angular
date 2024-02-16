@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class AdminComponent implements OnInit {
+  adminComponent: string = 'orders';
   userResponse?:UserResponse | null;
   constructor(
     private userService: UserService,       
@@ -27,6 +28,9 @@ export class AdminComponent implements OnInit {
     this.userService.removeUserFromLocalStorage();
     this.tokenService.removeToken();
     this.userResponse = this.userService.getUserResponseFromLocalStorage();    
+  }
+  showAdminComponent(componentName: string): void {
+    this.adminComponent = componentName;
   }
 }
 
