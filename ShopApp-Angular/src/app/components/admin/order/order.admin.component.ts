@@ -24,7 +24,8 @@ export class OrderAdminComponent implements OnInit{
   visiblePages: number[] = [];
 
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router
   ) {
 
   }
@@ -72,6 +73,10 @@ export class OrderAdminComponent implements OnInit{
   }
   deleteOrder(id:number) {
     
+  }
+  viewDetails(order:OrderResponse) {
+    debugger
+    this.router.navigate(['/admin/orders', order.id]);
   }
   
 }
