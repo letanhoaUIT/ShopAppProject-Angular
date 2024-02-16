@@ -3,18 +3,18 @@ import { Product } from '../../models/product';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { OrderService } from '../../services/order.service';
-import { environment } from 'src/app/environments/environment';
+import { environment } from 'src/environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
 import { OrderResponse } from 'src/app/responses/order/order.response';
 import { OrderDetail } from 'src/app/models/order.detail';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order.detail.component.html',
   styleUrls: ['./order.detail.component.scss']
 })
-export class OrderDetailComponent implements OnInit {
-
+export class OrderDetailComponent implements OnInit {  
   orderResponse: OrderResponse = {
     id: 0, // Hoặc bất kỳ giá trị số nào bạn muốn
     user_id: 0,
@@ -32,15 +32,18 @@ export class OrderDetailComponent implements OnInit {
     payment_method: '',
     order_details: [] // Một mảng rỗng
   };  
-  constructor(private orderService: OrderService) {}
+  constructor(
+    private orderService: OrderService,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit(): void {
     this.getOrderDetails();
   }
-
+  
   getOrderDetails(): void {
     debugger
-    const orderId = 10; // Thay bằng ID của đơn hàng bạn muốn lấy.
+    const orderId = Number(this.route.snapshot.paramMap.get('orderId'));
     this.orderService.getOrderById(orderId).subscribe({
       next: (response: any) => {        
         debugger;       

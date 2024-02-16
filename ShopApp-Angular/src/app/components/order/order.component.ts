@@ -4,7 +4,7 @@ import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { OrderService } from '../../services/order.service';
 import { TokenService } from '../../services/token.service';
-import { environment } from 'src/app/environments/environment';
+import { environment } from 'src/environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -23,9 +23,10 @@ export class OrderComponent implements OnInit{
   orderData: OrderDTO = {
     user_id: 0, // Thay bằng user_id thích hợp
     fullname: '', // Khởi tạo rỗng, sẽ được điền từ form
-    email: '', // Khởi tạo rỗng, sẽ được điền từ form
+    email: '', // Khởi tạo rỗng, sẽ được điền từ form    
     phone_number: '', // Khởi tạo rỗng, sẽ được điền từ form
     address: '', // Khởi tạo rỗng, sẽ được điền từ form
+    status: 'pending',
     note: '', // Có thể thêm trường ghi chú nếu cần
     total_money: 0, // Sẽ được tính toán dựa trên giỏ hàng và mã giảm giá
     payment_method: 'cod', // Mặc định là thanh toán khi nhận hàng (COD)
@@ -45,11 +46,11 @@ export class OrderComponent implements OnInit{
   ) {
     // Tạo FormGroup và các FormControl tương ứng
     this.orderForm = this.formBuilder.group({
-      fullname: ['hoàng xx', Validators.required], // fullname là FormControl bắt buộc      
-      email: ['hoang234@gmail.com', [Validators.email]], // Sử dụng Validators.email cho kiểm tra định dạng email
-      phone_number: ['11445547', [Validators.required, Validators.minLength(6)]], // phone_number bắt buộc và ít nhất 6 ký tự
-      address: ['nhà x ngõ y', [Validators.required, Validators.minLength(5)]], // address bắt buộc và ít nhất 5 ký tự
-      note: ['dễ vữ'],
+      fullname: ['', Validators.required], // fullname là FormControl bắt buộc      
+      email: ['', [Validators.email]], // Sử dụng Validators.email cho kiểm tra định dạng email
+      phone_number: ['', [Validators.required, Validators.minLength(6)]], // phone_number bắt buộc và ít nhất 6 ký tự
+      address: ['', [Validators.required, Validators.minLength(5)]], // address bắt buộc và ít nhất 5 ký tự
+      note: [''],
       shipping_method: ['express'],
       payment_method: ['cod']
     });
@@ -98,7 +99,7 @@ export class OrderComponent implements OnInit{
   }
   placeOrder() {
     debugger
-    if (this.orderForm.valid) {
+    if (this.orderForm.errors == null) {
       // Gán giá trị từ form vào đối tượng orderData
       /*
       this.orderData.fullname = this.orderForm.get('fullname')!.value;
