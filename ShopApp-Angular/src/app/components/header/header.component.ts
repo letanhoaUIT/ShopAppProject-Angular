@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { UserResponse } from 'src/app/responses/user/user.response';
-import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TokenService } from 'src/app/services/token.service';
+import { UserResponse } from '../../responses/user/user.response';
+import { TokenService } from '../../services/token.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -16,8 +16,7 @@ export class HeaderComponent implements OnInit{
   activeNavItem: number = 0;
 
   constructor(
-    private userService: UserService,   
-    //private popoverConfig: NgbPopoverConfig,  
+    private userService: UserService,       
     private tokenService: TokenService,    
     private router: Router,
   ) {

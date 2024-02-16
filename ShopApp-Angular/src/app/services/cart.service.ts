@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { ProductService } from './product.service';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +8,7 @@ import { Observable, of } from 'rxjs';
 export class CartService {
   private cart: Map<number, number> = new Map(); // Dùng Map để lưu trữ giỏ hàng, key là id sản phẩm, value là số lượng
 
-  constructor(private productService: ProductService) {
+  constructor() {
     // Lấy dữ liệu giỏ hàng từ localStorage khi khởi tạo service    
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {

@@ -4,11 +4,11 @@ import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { OrderService } from '../../services/order.service';
 import { TokenService } from '../../services/token.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Order } from 'src/app/models/order';
+import { Order } from '../../models/order';
 
 @Component({
   selector: 'app-order',

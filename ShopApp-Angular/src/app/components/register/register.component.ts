@@ -18,8 +18,10 @@ export class RegisterComponent {
   address:string;
   isAccepted: boolean;
   dateOfBirth: Date;
+  showPassword: boolean = false;
 
   constructor(private router: Router, private userService: UserService){
+    debugger
     this.phoneNumber = '';
     this.password = '';
     this.retypePassword = '';
@@ -60,15 +62,23 @@ export class RegisterComponent {
     this.userService.register(registerDTO).subscribe({
         next: (response: any) => {
           debugger
-          this.router.navigate(['/login']);          
+          const confirmation = window
+            .confirm('Đăng ký thành công, mời bạn đăng nhập. Bấm "OK" để chuyển đến trang đăng nhập.');
+          if (confirmation) {
+            this.router.navigate(['/login']);
+          }
         },
         complete: () => {
           debugger
         },
-        error: (error: any) => {          
-          alert(`Cannot register, error: ${error.error}`)          
+        error: (error: any) => {        
+          debugger  
+          alert(error?.error?.message ?? '')          
         }
     })   
+  }
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
   //how to check password match ?
   checkPasswordsMatch() {    

@@ -26,8 +26,10 @@
                         [(ngModel)]="password"                            
                         name="password"
                         placeholder="Ít nhất 3 ký tự" required
-                        class="form-control" id="password">
-                    <i class="password-toggle fas fa-eye-slash"></i>
+                        class="form-control" id="password">                    
+                    <i class="password-toggle fas" [ngClass]="showPassword ? 
+                        'fa-eye' : 'fa-eye-slash'" (click)="togglePassword()">
+                        </i>
                     <div class="divider-nospace"></div>
                     <p class="text-danger" 
                         *ngIf="password.length < 3 && registerForm.form.touched">
@@ -43,8 +45,10 @@
                         name="retypePassword"
                         (input)="registerForm.form.markAsTouched(); checkPasswordsMatch()"
                         required
-                        class="form-control" id="retype-password">
-                    <i class="password-toggle fas fa-eye-slash"></i>
+                        class="form-control" id="retype-password">                    
+                    <i class="password-toggle fas" [ngClass]="showPassword ? 
+                        'fa-eye' : 'fa-eye-slash'" (click)="togglePassword()">
+                        </i>
                     <div class="divider-nospace"></div>
                     <p class="text-danger" 
                         *ngIf="retypePassword.length < 3 && registerForm.form.touched">

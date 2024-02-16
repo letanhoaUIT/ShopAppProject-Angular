@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 import { Category } from '../../models/category';
-import { ProductService } from 'src/app/services/product.service';
-import { CategoryService } from 'src/app/services/category.service';
-import { environment } from 'src/app/environments/environment';
+import { ProductService } from '../../services/product.service';
+import { CategoryService } from '../../services/category.service';
+import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
-import { TokenService } from 'src/app/services/token.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   products: Product[] = [];
   categories: Category[] = []; // Dữ liệu động từ categoryService
   selectedCategoryId: number  = 0; // Giá trị category được chọn
-  currentPage: number = 1;
+  currentPage: number = 0;
   itemsPerPage: number = 12;
   pages: number[] = [];
   totalPages:number = 0;
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     });
   }
   searchProducts() {
-    this.currentPage = 1;
+    this.currentPage = 0;
     this.itemsPerPage = 12;
     debugger
     this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
@@ -92,7 +92,8 @@ export class HomeComponent implements OnInit {
       startPage = Math.max(endPage - maxVisiblePages + 1, 1);
     }
 
-    return new Array(endPage - startPage + 1).fill(0).map((_, index) => startPage + index);
+    return new Array(endPage - startPage + 1).fill(0)
+        .map((_, index) => startPage + index);
   }
   // Hàm xử lý sự kiện khi sản phẩm được bấm vào
   onProductClick(productId: number) {

@@ -1,4 +1,4 @@
-import { Role } from "src/app/models/role";
+import { Role } from "../../models/role";
 
 export interface UserResponse {
     id: number;

@@ -3,10 +3,10 @@ import { Product } from '../../models/product';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { OrderService } from '../../services/order.service';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { OrderDTO } from '../../dtos/order/order.dto';
-import { OrderResponse } from 'src/app/responses/order/order.response';
-import { OrderDetail } from 'src/app/models/order.detail';
+import { OrderResponse } from '../../responses/order/order.response';
+import { OrderDetail } from '../../models/order.detail';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

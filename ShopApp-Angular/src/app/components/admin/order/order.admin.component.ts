@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Order } from 'src/app/models/order';
-import { OrderService } from 'src/app/services/order.service';
+import { Order } from '../../../models/order';
+import { OrderService } from '../../../services/order.service';
 import { Observable } from 'rxjs';
-import { environment } from 'src/app/environments/environment';
-import { OrderResponse } from 'src/app/responses/order/order.response';
+import { environment } from '../../../environments/environment';
+import { OrderResponse } from '../../../responses/order/order.response';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-order-admin',
@@ -25,7 +26,9 @@ export class OrderAdminComponent implements OnInit{
 
   constructor(
     private orderService: OrderService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location
   ) {
 
   }
@@ -72,7 +75,24 @@ export class OrderAdminComponent implements OnInit{
         .map((_, index) => startPage + index);
   }
   deleteOrder(id:number) {
-    
+    const confirmation = window
+      .confirm('Are you sure you want to delete this order?');
+    if (confirmation) {
+      debugger
+      this.orderService.deleteOrder(id).subscribe({
+        next: (response: any) => {
+          debugger 
+          location.reload();          
+        },
+        complete: () => {
+          debugger;          
+        },
+        error: (error: any) => {
+          debugger;
+          console.error('Error fetching products:', error);
+        }
+      });    
+    }
   }
   viewDetails(order:OrderResponse) {
     debugger

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; 
-import { ProductService } from 'src/app/services/product.service';
-import { CartService } from 'src/app/services/cart.service';
-import { CategoryService } from 'src/app/services/category.service';
-import { Router } from '@angular/router';
+import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
+import { CategoryService } from '../../services/category.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product';
-import { ProductImage } from 'src/app/models/product.image';
-import { environment } from 'src/app/environments/environment';
+import { ProductImage } from '../../models/product.image';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-detail-product',
@@ -24,16 +23,17 @@ export class DetailProductComponent implements OnInit {
     private cartService: CartService,
     // private categoryService: CategoryService,
     // private router: Router,
-    // private activatedRoute: ActivatedRoute,
+      private activatedRoute: ActivatedRoute,
+      private router: Router,
     ) {
       
     }
     ngOnInit() {
       // Lấy productId từ URL      
-      //const idParam = this.activatedRoute.snapshot.paramMap.get('id');
+      const idParam = this.activatedRoute.snapshot.paramMap.get('id');
       debugger
       //this.cartService.clearCart();
-      const idParam = 9 //fake tạm 1 giá trị
+      //const idParam = 9 //fake tạm 1 giá trị
       if (idParam !== null) {
         this.productId = +idParam;
       }
@@ -112,7 +112,7 @@ export class DetailProductComponent implements OnInit {
       }
     }
     
-    buyNow(): void {
-      // Thực hiện xử lý khi người dùng muốn mua ngay
+    buyNow(): void {      
+      this.router.navigate(['/orders']);
     }    
 }

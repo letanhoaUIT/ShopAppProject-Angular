@@ -27,6 +27,10 @@ header {
     background-color: $shopapp-color !important;
     color: white !important;
 }
+.nav-item.active {
+    background-color: $shopapp-color !important;
+    color: white !important;
+}
 
 /* Add this CSS to your project's stylesheet */
 
