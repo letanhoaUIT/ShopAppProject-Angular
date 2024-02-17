@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface OrderRepository extends JpaRepository<Order, Long> {
     //Tìm các đơn hàng của 1 user nào đó
     List<Order> findByUserId(Long userId);
-    @Query("SELECT o FROM Order o WHERE (:keyword IS NULL OR :keyword = '' OR " +
+    @Query("SELECT o FROM Order o WHERE o.active = true AND (:keyword IS NULL OR :keyword = '' OR " +
             "o.fullName LIKE %:keyword% " +
             "OR o.address LIKE %:keyword% " +
             "OR o.note LIKE %:keyword% " +
@@ -114,5 +114,4 @@ VALUES
     (36, 52, 7.49, 2, 14.98, 'White'),
     (37, 53, 9.99, 1, 9.99, 'Red'),
     (37, 54, 5.99, 3, 17.97, 'Blue');
-
 * */

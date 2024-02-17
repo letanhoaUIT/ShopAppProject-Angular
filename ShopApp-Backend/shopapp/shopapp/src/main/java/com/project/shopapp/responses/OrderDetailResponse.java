@@ -28,6 +28,7 @@ public class OrderDetailResponse {
     private Float totalMoney;
 
     private String color;
+
     public static OrderDetailResponse fromOrderDetail(OrderDetail orderDetail) {
         return OrderDetailResponse
                 .builder()
