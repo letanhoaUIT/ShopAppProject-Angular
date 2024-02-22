@@ -84,9 +84,9 @@ If you want to contribute to this project, please follow these steps:
 
 
 # Output:
-- Login
+- Sign up
                
-![image](https://github.com/letanhoaUIT/hotel-management/assets/141432034/603badd1-72f2-4a02-9bcf-f5954879166f)
+![signup](https://github.com/letanhoaUIT/ShopAppProject-Angular/blob/main/images/sign-up.png)
 - Main interface
                          
 ![image](https://github.com/letanhoaUIT/hotel-management/assets/141432034/84039fec-0c45-439a-949b-48734d24f660)
