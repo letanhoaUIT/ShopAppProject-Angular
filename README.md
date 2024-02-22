@@ -65,25 +65,22 @@ In cmd/Terminal: ng serve
 
 Open a browser and access the following address:  http://localhost:4200/
 
+### Step 7: Run MySQL on XAMPP and import file shopapp.sql into MySQL 
+
+**Note:** you must start MySQL on XAMPP before running the backend
+
 ## Contributing
+
+I look forward to receiving feedback and contributions.
 
 If you want to contribute to this project, please follow these steps:
 
 1. Fork the project.
-2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m "Add a new feature"`.
-4. Push to your fork: `git push origin feature-name`.
+2. Create a new branch for your feature or bug fix: git checkout -b feature-name.
+3. Commit your changes: git commit -m "Add a new feature".
+4. Push to your fork: git push origin feature-name.
 5. Create a pull request on the original repository.
 
-## System Requirements
-
-Before getting started with the project, make sure your computer meets the following requirements:
-
-- Java Development Kit (JDK): Version 11 or higher is recommended. You can download the JDK [here](https://www.oracle.com/java/technologies/javase-downloads.html).
-- NetBeans IDE: Version 8.2 or higher is suggested for developing this project. You can download NetBeans IDE [here](https://netbeans.apache.org/download/index.html).
-- MySQL Database Server: This project uses MySQL to store data. You need to install MySQL Database Server version 5.7 or higher. Download MySQL [here](https://dev.mysql.com/downloads/mysql/).
-
-**Note:** Ensure that you have installed and configured these system requirements before running the project.
 
 
 # Output:
