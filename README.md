@@ -8,7 +8,6 @@ This is a ShopApp project developed using Angular and Java.
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 
 ## Description
@@ -43,14 +42,28 @@ Before you start, you need to install some of the following software and tools:
 
 ### Step 1: Install Angular CLI
 
-npm install -g @angular/cli
+Opem cmd on Window/Terminal on macOS : npm install -g @angular/cli
 
-## Usage
+### Step 2: Step 2: Clone project from GitHub
 
-1. Launch the application.
-2. Log in using your credentials.
-3. Navigate to the "Reservation" section to make a new booking.
-4. Explore other features like check-in, check-out, and room management as a staff and employee management as a manager.
+git clone [https://github.com/yourusername/shopapp.git](https://github.com/letanhoaUIT/ShopAppProject-Angular)
+cd shopapp
+
+### Step 3: Install dependent packages
+
+Move to the ShopApp-Angular folder in the cloned project and install npm packages
+cd ShopApp-Angular
+npm install
+
+### Step 4: Run Spring Boot application from IntelliJ IDEA.
+
+### Step 5: Step 5: Start the Angular server
+
+In cmd/Terminal: ng serve
+
+### Step 6: Access the application
+
+Open a browser and access the following address:  http://localhost:4200/
 
 ## Contributing
 
