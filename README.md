@@ -43,7 +43,6 @@ Before you start, you need to install some of the following software and tools:
 
 ### Step 1: Install Angular CLI
 
-```bash
 npm install -g @angular/cli
 
 ## Usage
