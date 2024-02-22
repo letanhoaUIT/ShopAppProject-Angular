@@ -1,4 +1,4 @@
-# Hotel Management System
+# Shop App
 
 This is a ShopApp project developed using Angular and Java.
 
