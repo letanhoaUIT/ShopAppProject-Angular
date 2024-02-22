@@ -45,7 +45,7 @@ Before you start, you need to install some of the following software and tools:
 
 Opem cmd on Window/Terminal on macOS : npm install -g @angular/cli
 
-### Step 2: Step 2: Clone project from GitHub
+### Step 2: Clone project from GitHub
 
 git clone [https://github.com/yourusername/shopapp.git](https://github.com/letanhoaUIT/ShopAppProject-Angular)
 cd shopapp
@@ -67,6 +67,8 @@ In cmd/Terminal: ng serve
 Open a browser and access the following address:  http://localhost:4200/
 
 ### Step 7: Run MySQL on XAMPP and import file shopapp.sql into MySQL 
+
+
 
 **Note:** you must start MySQL on XAMPP before running the backend
 
