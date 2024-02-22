@@ -31,14 +31,20 @@ The Hotel Management System project is a Java application developed to assist in
 - Use bootstrap@5.3.2 library
 - Spring security version 6.2.0 
 - IDE: Visual Studio Code, IntelliJ IDEA
-- Cài đặt XAMPP để sử dụng MySQL
+- Install XAMPP to use MySQL
   
-## Installation
+## Installation Instructions:
 
-1. Clone the repository: `https://github.com/letanhoaUIT/hotel-management`
-2. Install Java and NetBeans.
-3. Create a MySQL database for the project.
-4. Configure the database connection in the project settings.
+Before you start, you need to install some of the following software and tools:
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [npm](https://www.npmjs.com/) (Node.js Package Manager)
+- [XAMPP](https://www.apachefriends.org/index.html) or another MySQL database
+
+### Step 1: Install Angular CLI
+
+```bash
+npm install -g @angular/cli
 
 ## Usage
 
